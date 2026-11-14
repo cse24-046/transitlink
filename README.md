@@ -1,11 +1,17 @@
 1.This project is a local academic/AWD practical project, not a production-ready system.
+
 2.Database connection details are hardcoded in:    src/main/java/bac/ac/transitlink/util/DBConnection.java    JDBC URL: jdbc:mysql://localhost:3306/transitlink_db?useSSL=false&serverTimezone=UTC    USER: root    PASSWORD: bianca.1865
+
 3.The app uses role-based access control:
 ◦PASSENGER users can search trips and book tickets.
 ◦ADMIN users can access the admin dashboard.
+
 4.The RoleFilter restricts access to /admin/ and protected booking pages.
+
 5.Booking transaction is atomic: the app checks seat availability and updates seats in one database transaction before inserting the booking record.
+
 6.If the app is being run in a fresh environment, create the MySQL database and tables first.
+
 7.Note: BookingServlet points to /WEB-INF/views/my-bookings.jsp, but the JSP file is not currently visible in this repo. Confirm the file exists before testing that route.
 
 PROJECT STRUCTURE
